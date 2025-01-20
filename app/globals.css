@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #d0cfd6;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#auth-form {
+  width: 90%;
+  max-width: 40rem;
+  border-radius: 8px;
+  padding: 3rem 4rem;
+  margin: 5rem auto;
+  background: linear-gradient(145deg, #2c2c54, #474787);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  animation: slideIn 1s ease-in-out;
+}
+
+#auth-form img {
+  display: block;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  margin: 1rem auto;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+  animation: bounce 2s infinite;
+}
+
+#auth-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #d4d4dc;
+}
+
+#auth-form input {
+  font: inherit;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+#auth-form input:focus {
+  outline: none;
+  border-color: #6a67ce;
+  box-shadow: 0 0 5px rgba(106, 103, 206, 0.5);
+}
+
+#auth-form button {
+  width: 100%;
+  font: inherit;
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background-color: #4b34a9;
+  color: #ffffff;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  animation: pulse 1.5s infinite;
+}
+
+#auth-form button:hover {
+  background-color: #3a2786;
+}
+
+#auth-form button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.5s ease;
+}
+
+#auth-form button:hover::after {
+  left: 100%;
+}
+
+#auth-form a {
+  color: #d4d4dc;
+  text-decoration: none;
+  display: block;
+  margin: 1rem 0;
+  text-align: center;
+  transition: color 0.3s ease;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+#auth-form a:hover {
+  color: #6a67ce;
+}
+
+#form-errors {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: #ff4d4d;
+}
+
+#auth-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 50rem;
+  margin: 2rem auto;
+}
+
+#auth-header p {
+  font-size: 1.25rem;
+}
+
+#auth-header button {
+  font: inherit;
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background-color: #6f34a9;
+  color: #ffffff;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  animation: popIn 1s ease-in-out;
+}
+
+#auth-header button:hover {
+  background-color: #5f2a8a;
+}
+
+main {
+  max-width: 50rem;
+  margin: 2rem auto;
+}
+
+#training-sessions {
+  max-width: 40rem;
+  margin: 2rem auto;
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+}
+
+#training-sessions li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+  border-radius: 6px;
+  background: linear-gradient(145deg, #232323, #383838);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  animation: zoomIn 1s ease-in-out;
+}
+
+#training-sessions li img {
+  width: 100%;
+  animation: bounce 2s infinite;
+}
+
+#training-sessions li h2 {
+  margin: 1rem 0 0 0;
+  padding: 0 1rem;
+  color: #ffffff;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+
+#training-sessions li div {
+  text-align: center;
+}
+
+#training-sessions li p {
+  margin: 1rem;
+  color: #a1a1a1;
+}
+
+@media screen and (min-width: 300px) and (max-width: 600px) {
+  #auth-form {
+    padding: 2rem;
+  }
+
+  #auth-form button {
+    font-size: 0.9rem;
+  }
+
+  #auth-header {
+    flex-direction: column;
+    gap: 1rem;
+    
+  }
+
+  #training-sessions {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
